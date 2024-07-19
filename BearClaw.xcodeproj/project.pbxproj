@@ -1,0 +1,761 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		630844562C4AE35700F54801 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 630844552C4AE35700F54801 /* .gitignore */; };
+		630844582C4AE57500F54801 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 630844572C4AE57500F54801 /* LICENSE */; };
+		632F99972C35F2B60043D1AE /* BearClawLauncher.app in Resources */ = {isa = PBXBuildFile; fileRef = 63C577C62C29D6DF00FC4FDC /* BearClawLauncher.app */; };
+		635CFEC82C395A3900D0EE04 /* BearClawCore in Frameworks */ = {isa = PBXBuildFile; productRef = 635CFEC72C395A3900D0EE04 /* BearClawCore */; };
+		63695E7C2C2F548D00B12BEB /* TemplateEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695E7B2C2F548D00B12BEB /* TemplateEditorView.swift */; };
+		63695E7E2C2F559800B12BEB /* CalendarPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695E7D2C2F559800B12BEB /* CalendarPopoverView.swift */; };
+		63695E802C2F55B200B12BEB /* AboutPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695E7F2C2F55B200B12BEB /* AboutPopoverView.swift */; };
+		63695E842C2F5B7500B12BEB /* TemplatesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695E832C2F5B7500B12BEB /* TemplatesTableView.swift */; };
+		63695E862C2F5CC700B12BEB /* TemplatesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695E852C2F5CC700B12BEB /* TemplatesTableViewController.swift */; };
+		63695E882C2F5CF200B12BEB /* TemplatesTableViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695E872C2F5CF200B12BEB /* TemplatesTableViewRepresentable.swift */; };
+		63695E8A2C2F6BF500B12BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695E892C2F6BF500B12BEB /* AppDelegate.swift */; };
+		6375B48E2C30912300A855DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375B48D2C30912300A855DF /* ContentView.swift */; };
+		638850552C3AF438004F34E2 /* swiftlint.sb in Resources */ = {isa = PBXBuildFile; fileRef = 638850542C3AF438004F34E2 /* swiftlint.sb */; };
+		639CA3222C3AEA76005944F2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 639CA3212C3AEA76005944F2 /* .swiftlint.yml */; };
+		63BDD7A52C2AC0A2007A9A46 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BDD7A42C2AC0A2007A9A46 /* AboutView.swift */; };
+		63C5778A2C298C8A00FC4FDC /* BearHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C577892C298C8A00FC4FDC /* BearHelperApp.swift */; };
+		63C5778E2C298C8B00FC4FDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C5778D2C298C8B00FC4FDC /* Assets.xcassets */; };
+		63C577912C298C8B00FC4FDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C577902C298C8B00FC4FDC /* Preview Assets.xcassets */; };
+		63C577BE2C29B57600FC4FDC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C577BD2C29B57600FC4FDC /* SettingsView.swift */; };
+		63C577C12C29D40500FC4FDC /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C577C02C29D40500FC4FDC /* ServiceManagement.framework */; };
+		63C577C92C29D6DF00FC4FDC /* BearHelperLauncherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C577C82C29D6DF00FC4FDC /* BearHelperLauncherApp.swift */; };
+		63C577CB2C29D6DF00FC4FDC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C577CA2C29D6DF00FC4FDC /* ContentView.swift */; };
+		63C577CD2C29D6E100FC4FDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C577CC2C29D6E100FC4FDC /* Assets.xcassets */; };
+		63F235D02C42A4C800CDB3EA /* BearClawLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63C577C62C29D6DF00FC4FDC /* BearClawLauncher.app */; };
+		63F5CA412C383D42000DBA92 /* StatusItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F5CA402C383D42000DBA92 /* StatusItemManager.swift */; };
+		63F5CA4B2C384F0E000DBA92 /* CustomRemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F5CA4A2C384F0E000DBA92 /* CustomRemoteViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		632F99982C35F2B60043D1AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63C5777E2C298C8A00FC4FDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63C577C52C29D6DF00FC4FDC;
+			remoteInfo = BearHelperLauncher;
+		};
+		632F999A2C35F2C90043D1AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63C5777E2C298C8A00FC4FDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63C577C52C29D6DF00FC4FDC;
+			remoteInfo = BearHelperLauncher;
+		};
+		632F999C2C35F2F90043D1AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63C5777E2C298C8A00FC4FDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63C577C52C29D6DF00FC4FDC;
+			remoteInfo = BearHelperLauncher;
+		};
+		632F999E2C35F3020043D1AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63C5777E2C298C8A00FC4FDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63C577C52C29D6DF00FC4FDC;
+			remoteInfo = BearHelperLauncher;
+		};
+		632F99A02C35F3A70043D1AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63C5777E2C298C8A00FC4FDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63C577C52C29D6DF00FC4FDC;
+			remoteInfo = BearHelperLauncher;
+		};
+		632F99A22C35F3AC0043D1AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63C5777E2C298C8A00FC4FDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63C577C52C29D6DF00FC4FDC;
+			remoteInfo = BearHelperLauncher;
+		};
+		632F99CC2C35F6B20043D1AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63C5777E2C298C8A00FC4FDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63C577C52C29D6DF00FC4FDC;
+			remoteInfo = BearHelperLauncher;
+		};
+		632F99CE2C35F6BD0043D1AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63C5777E2C298C8A00FC4FDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63C577C52C29D6DF00FC4FDC;
+			remoteInfo = BearHelperLauncher;
+		};
+		632F99F82C35F8130043D1AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63C5777E2C298C8A00FC4FDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63C577C52C29D6DF00FC4FDC;
+			remoteInfo = BearHelperLauncher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		63F235CF2C42A47800CDB3EA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				63F235D02C42A4C800CDB3EA /* BearClawLauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		630844552C4AE35700F54801 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		630844572C4AE57500F54801 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		635CFEC52C3951C300D0EE04 /* BearClawCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BearClawCore; path = ../BearClawCore; sourceTree = "<group>"; };
+		63695E7B2C2F548D00B12BEB /* TemplateEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateEditorView.swift; sourceTree = "<group>"; };
+		63695E7D2C2F559800B12BEB /* CalendarPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopoverView.swift; sourceTree = "<group>"; };
+		63695E7F2C2F55B200B12BEB /* AboutPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPopoverView.swift; sourceTree = "<group>"; };
+		63695E832C2F5B7500B12BEB /* TemplatesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesTableView.swift; sourceTree = "<group>"; };
+		63695E852C2F5CC700B12BEB /* TemplatesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesTableViewController.swift; sourceTree = "<group>"; };
+		63695E872C2F5CF200B12BEB /* TemplatesTableViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesTableViewRepresentable.swift; sourceTree = "<group>"; };
+		63695E892C2F6BF500B12BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6375B48D2C30912300A855DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		638850542C3AF438004F34E2 /* swiftlint.sb */ = {isa = PBXFileReference; lastKnownFileType = text; path = swiftlint.sb; sourceTree = "<group>"; };
+		639CA3212C3AEA76005944F2 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		63BDD7A42C2AC0A2007A9A46 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		63C577862C298C8A00FC4FDC /* BearClaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BearClaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C577892C298C8A00FC4FDC /* BearHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearHelperApp.swift; sourceTree = "<group>"; };
+		63C5778D2C298C8B00FC4FDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63C577902C298C8B00FC4FDC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		63C577922C298C8B00FC4FDC /* BearHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BearHelper.entitlements; sourceTree = "<group>"; };
+		63C577BD2C29B57600FC4FDC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		63C577C02C29D40500FC4FDC /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		63C577C62C29D6DF00FC4FDC /* BearClawLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BearClawLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C577C82C29D6DF00FC4FDC /* BearHelperLauncherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearHelperLauncherApp.swift; sourceTree = "<group>"; };
+		63C577CA2C29D6DF00FC4FDC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		63C577CC2C29D6E100FC4FDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63C577D12C29D6E100FC4FDC /* BearHelperLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BearHelperLauncher.entitlements; sourceTree = "<group>"; };
+		63C577D52C29D86600FC4FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		63C577D62C2A04D700FC4FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		63F5CA402C383D42000DBA92 /* StatusItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemManager.swift; sourceTree = "<group>"; };
+		63F5CA4A2C384F0E000DBA92 /* CustomRemoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRemoteViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63C577832C298C8A00FC4FDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635CFEC82C395A3900D0EE04 /* BearClawCore in Frameworks */,
+				63C577C12C29D40500FC4FDC /* ServiceManagement.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63C577C32C29D6DF00FC4FDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63C5777D2C298C8A00FC4FDC = {
+			isa = PBXGroup;
+			children = (
+				630844572C4AE57500F54801 /* LICENSE */,
+				630844552C4AE35700F54801 /* .gitignore */,
+				639CA3212C3AEA76005944F2 /* .swiftlint.yml */,
+				638850542C3AF438004F34E2 /* swiftlint.sb */,
+				635CFEC52C3951C300D0EE04 /* BearClawCore */,
+				63C577882C298C8A00FC4FDC /* BearHelper */,
+				63C577872C298C8A00FC4FDC /* Products */,
+				63C577BF2C29D40500FC4FDC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		63C577872C298C8A00FC4FDC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63C577862C298C8A00FC4FDC /* BearClaw.app */,
+				63C577C62C29D6DF00FC4FDC /* BearClawLauncher.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63C577882C298C8A00FC4FDC /* BearHelper */ = {
+			isa = PBXGroup;
+			children = (
+				63C577D62C2A04D700FC4FDC /* Info.plist */,
+				63C577892C298C8A00FC4FDC /* BearHelperApp.swift */,
+				63C5778D2C298C8B00FC4FDC /* Assets.xcassets */,
+				63C577922C298C8B00FC4FDC /* BearHelper.entitlements */,
+				63C5778F2C298C8B00FC4FDC /* Preview Content */,
+				63C577BD2C29B57600FC4FDC /* SettingsView.swift */,
+				63BDD7A42C2AC0A2007A9A46 /* AboutView.swift */,
+				63695E7B2C2F548D00B12BEB /* TemplateEditorView.swift */,
+				63695E7D2C2F559800B12BEB /* CalendarPopoverView.swift */,
+				63695E7F2C2F55B200B12BEB /* AboutPopoverView.swift */,
+				63695E832C2F5B7500B12BEB /* TemplatesTableView.swift */,
+				63695E852C2F5CC700B12BEB /* TemplatesTableViewController.swift */,
+				63695E872C2F5CF200B12BEB /* TemplatesTableViewRepresentable.swift */,
+				63695E892C2F6BF500B12BEB /* AppDelegate.swift */,
+				6375B48D2C30912300A855DF /* ContentView.swift */,
+				63F5CA402C383D42000DBA92 /* StatusItemManager.swift */,
+				63F5CA4A2C384F0E000DBA92 /* CustomRemoteViewController.swift */,
+			);
+			path = BearHelper;
+			sourceTree = "<group>";
+		};
+		63C5778F2C298C8B00FC4FDC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				63C577902C298C8B00FC4FDC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		63C577BF2C29D40500FC4FDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63C577C72C29D6DF00FC4FDC /* BearHelperLauncher */,
+				63C577C02C29D40500FC4FDC /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63C577C72C29D6DF00FC4FDC /* BearHelperLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				63C577D52C29D86600FC4FDC /* Info.plist */,
+				63C577C82C29D6DF00FC4FDC /* BearHelperLauncherApp.swift */,
+				63C577CA2C29D6DF00FC4FDC /* ContentView.swift */,
+				63C577CC2C29D6E100FC4FDC /* Assets.xcassets */,
+				63C577D12C29D6E100FC4FDC /* BearHelperLauncher.entitlements */,
+				63C577CE2C29D6E100FC4FDC /* Preview Content */,
+			);
+			path = BearHelperLauncher;
+			sourceTree = "<group>";
+		};
+		63C577CE2C29D6E100FC4FDC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63C577852C298C8A00FC4FDC /* BearClaw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63C577952C298C8B00FC4FDC /* Build configuration list for PBXNativeTarget "BearClaw" */;
+			buildPhases = (
+				63C577822C298C8A00FC4FDC /* Sources */,
+				63C577832C298C8A00FC4FDC /* Frameworks */,
+				63C577842C298C8A00FC4FDC /* Resources */,
+				63F235CF2C42A47800CDB3EA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				632F99992C35F2B60043D1AE /* PBXTargetDependency */,
+				632F999B2C35F2C90043D1AE /* PBXTargetDependency */,
+				632F999D2C35F2F90043D1AE /* PBXTargetDependency */,
+				632F999F2C35F3020043D1AE /* PBXTargetDependency */,
+				632F99A12C35F3A70043D1AE /* PBXTargetDependency */,
+				632F99A32C35F3AC0043D1AE /* PBXTargetDependency */,
+				632F99CD2C35F6B20043D1AE /* PBXTargetDependency */,
+				632F99CF2C35F6BD0043D1AE /* PBXTargetDependency */,
+				632F99F92C35F8130043D1AE /* PBXTargetDependency */,
+			);
+			name = BearClaw;
+			packageProductDependencies = (
+				635CFEC72C395A3900D0EE04 /* BearClawCore */,
+			);
+			productName = BearHelper;
+			productReference = 63C577862C298C8A00FC4FDC /* BearClaw.app */;
+			productType = "com.apple.product-type.application";
+		};
+		63C577C52C29D6DF00FC4FDC /* BearClawLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63C577D22C29D6E100FC4FDC /* Build configuration list for PBXNativeTarget "BearClawLauncher" */;
+			buildPhases = (
+				63C577C22C29D6DF00FC4FDC /* Sources */,
+				63C577C32C29D6DF00FC4FDC /* Frameworks */,
+				63C577C42C29D6DF00FC4FDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BearClawLauncher;
+			productName = BearHelperLauncher;
+			productReference = 63C577C62C29D6DF00FC4FDC /* BearClawLauncher.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63C5777E2C298C8A00FC4FDC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					63C577852C298C8A00FC4FDC = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					63C577C52C29D6DF00FC4FDC = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 63C577812C298C8A00FC4FDC /* Build configuration list for PBXProject "BearClaw" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63C5777D2C298C8A00FC4FDC;
+			packageReferences = (
+				635CFEC62C395A3900D0EE04 /* XCLocalSwiftPackageReference "../BearClawCore" */,
+			);
+			productRefGroup = 63C577872C298C8A00FC4FDC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63C577852C298C8A00FC4FDC /* BearClaw */,
+				63C577C52C29D6DF00FC4FDC /* BearClawLauncher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63C577842C298C8A00FC4FDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				639CA3222C3AEA76005944F2 /* .swiftlint.yml in Resources */,
+				638850552C3AF438004F34E2 /* swiftlint.sb in Resources */,
+				63C577912C298C8B00FC4FDC /* Preview Assets.xcassets in Resources */,
+				630844582C4AE57500F54801 /* LICENSE in Resources */,
+				632F99972C35F2B60043D1AE /* BearClawLauncher.app in Resources */,
+				630844562C4AE35700F54801 /* .gitignore in Resources */,
+				63C5778E2C298C8B00FC4FDC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63C577C42C29D6DF00FC4FDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63C577CD2C29D6E100FC4FDC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63C577822C298C8A00FC4FDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63695E802C2F55B200B12BEB /* AboutPopoverView.swift in Sources */,
+				63C577BE2C29B57600FC4FDC /* SettingsView.swift in Sources */,
+				63695E862C2F5CC700B12BEB /* TemplatesTableViewController.swift in Sources */,
+				63695E7E2C2F559800B12BEB /* CalendarPopoverView.swift in Sources */,
+				63F5CA4B2C384F0E000DBA92 /* CustomRemoteViewController.swift in Sources */,
+				63695E7C2C2F548D00B12BEB /* TemplateEditorView.swift in Sources */,
+				63695E8A2C2F6BF500B12BEB /* AppDelegate.swift in Sources */,
+				63C5778A2C298C8A00FC4FDC /* BearHelperApp.swift in Sources */,
+				6375B48E2C30912300A855DF /* ContentView.swift in Sources */,
+				63BDD7A52C2AC0A2007A9A46 /* AboutView.swift in Sources */,
+				63F5CA412C383D42000DBA92 /* StatusItemManager.swift in Sources */,
+				63695E882C2F5CF200B12BEB /* TemplatesTableViewRepresentable.swift in Sources */,
+				63695E842C2F5B7500B12BEB /* TemplatesTableView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63C577C22C29D6DF00FC4FDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63C577CB2C29D6DF00FC4FDC /* ContentView.swift in Sources */,
+				63C577C92C29D6DF00FC4FDC /* BearHelperLauncherApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		632F99992C35F2B60043D1AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63C577C52C29D6DF00FC4FDC /* BearClawLauncher */;
+			targetProxy = 632F99982C35F2B60043D1AE /* PBXContainerItemProxy */;
+		};
+		632F999B2C35F2C90043D1AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63C577C52C29D6DF00FC4FDC /* BearClawLauncher */;
+			targetProxy = 632F999A2C35F2C90043D1AE /* PBXContainerItemProxy */;
+		};
+		632F999D2C35F2F90043D1AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63C577C52C29D6DF00FC4FDC /* BearClawLauncher */;
+			targetProxy = 632F999C2C35F2F90043D1AE /* PBXContainerItemProxy */;
+		};
+		632F999F2C35F3020043D1AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63C577C52C29D6DF00FC4FDC /* BearClawLauncher */;
+			targetProxy = 632F999E2C35F3020043D1AE /* PBXContainerItemProxy */;
+		};
+		632F99A12C35F3A70043D1AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63C577C52C29D6DF00FC4FDC /* BearClawLauncher */;
+			targetProxy = 632F99A02C35F3A70043D1AE /* PBXContainerItemProxy */;
+		};
+		632F99A32C35F3AC0043D1AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63C577C52C29D6DF00FC4FDC /* BearClawLauncher */;
+			targetProxy = 632F99A22C35F3AC0043D1AE /* PBXContainerItemProxy */;
+		};
+		632F99CD2C35F6B20043D1AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63C577C52C29D6DF00FC4FDC /* BearClawLauncher */;
+			targetProxy = 632F99CC2C35F6B20043D1AE /* PBXContainerItemProxy */;
+		};
+		632F99CF2C35F6BD0043D1AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63C577C52C29D6DF00FC4FDC /* BearClawLauncher */;
+			targetProxy = 632F99CE2C35F6BD0043D1AE /* PBXContainerItemProxy */;
+		};
+		632F99F92C35F8130043D1AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63C577C52C29D6DF00FC4FDC /* BearClawLauncher */;
+			targetProxy = 632F99F82C35F8130043D1AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		63C577932C298C8B00FC4FDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 48;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		63C577942C298C8B00FC4FDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 48;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		63C577962C298C8B00FC4FDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = BearHelper/BearHelper.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 49;
+				DEVELOPMENT_ASSET_PATHS = "\"BearHelper/Preview Content\"";
+				DEVELOPMENT_TEAM = 5LHT3P9C4T;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BearHelper/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bear Claw";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "We need access to your calendar to manage events.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = net.fodaveg.BearHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		63C577972C298C8B00FC4FDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = BearHelper/BearHelper.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 49;
+				DEVELOPMENT_ASSET_PATHS = "\"BearHelper/Preview Content\"";
+				DEVELOPMENT_TEAM = 5LHT3P9C4T;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BearHelper/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bear Claw";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "We need access to your calendar to manage events.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = net.fodaveg.BearHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		63C577D32C29D6E100FC4FDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BearHelperLauncher/BearHelperLauncher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 48;
+				DEVELOPMENT_ASSET_PATHS = "\"BearHelperLauncher/Preview Content\"";
+				DEVELOPMENT_TEAM = 5LHT3P9C4T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BearHelperLauncher/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BearClawLauncher;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSBackgroundOnly = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = net.fodaveg.BearHelperLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		63C577D42C29D6E100FC4FDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BearHelperLauncher/BearHelperLauncher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 48;
+				DEVELOPMENT_ASSET_PATHS = "\"BearHelperLauncher/Preview Content\"";
+				DEVELOPMENT_TEAM = 5LHT3P9C4T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BearHelperLauncher/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BearClawLauncher;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSBackgroundOnly = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = net.fodaveg.BearHelperLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63C577812C298C8A00FC4FDC /* Build configuration list for PBXProject "BearClaw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63C577932C298C8B00FC4FDC /* Debug */,
+				63C577942C298C8B00FC4FDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63C577952C298C8B00FC4FDC /* Build configuration list for PBXNativeTarget "BearClaw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63C577962C298C8B00FC4FDC /* Debug */,
+				63C577972C298C8B00FC4FDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63C577D22C29D6E100FC4FDC /* Build configuration list for PBXNativeTarget "BearClawLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63C577D32C29D6E100FC4FDC /* Debug */,
+				63C577D42C29D6E100FC4FDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		635CFEC62C395A3900D0EE04 /* XCLocalSwiftPackageReference "../BearClawCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../BearClawCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		635CFEC72C395A3900D0EE04 /* BearClawCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BearClawCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 63C5777E2C298C8A00FC4FDC /* Project object */;
+}

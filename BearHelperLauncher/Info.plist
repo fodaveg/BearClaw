@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LSUIElement</key>
+	<true/>
+	<key>CFBundleIdentifier</key>
+	<string>net.fodaveg.BearHelperLauncher</string>
+	<key>LSBackgroundOnly</key>
+	<true/>
+	<key>CFBundleDisplayName</key>
+	<string>BearHelperLauncher</string>
+	<key>CFBundleName</key>
+	<string>BearHelperLauncher</string>
+	<key>CFBundleExecutable</key>
+	<string>BearHelperLauncher</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>WNMN</string>
+	<key>SMPrivilegedExecutables</key>
+	<dict>
+		<key>net.fodaveg.BearHelperLauncher</key>
+		<string>$(CFBundleIdentifier)</string>
+	</dict>
+</dict>
+</plist>
