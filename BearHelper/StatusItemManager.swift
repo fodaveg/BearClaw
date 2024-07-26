@@ -2,13 +2,14 @@ import Cocoa
 import SwiftUI
 import BearClawCore
 
+@MainActor
 class StatusItemManager: NSObject, NSMenuItemValidation {
     static let shared = StatusItemManager()
     var statusItem: NSStatusItem!
     var popover: NSPopover?
     var aboutPopover: NSPopover?
     private var aboutPopoverTransiencyMonitor: Any?
-
+    
     func setupStatusItem() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         if let button = statusItem.button {
@@ -18,7 +19,7 @@ class StatusItemManager: NSObject, NSMenuItemValidation {
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
         }
     }
-
+    
     @objc func handleClick() {
         print("Status bar item clicked")
         let event = NSApp.currentEvent!
@@ -28,7 +29,7 @@ class StatusItemManager: NSObject, NSMenuItemValidation {
             executeDefaultAction()
         }
     }
-
+    
     @objc private func executeDefaultAction() {
         let defaultAction = SettingsManager.shared.defaultAction
         print("Executing default action: \(defaultAction)")
@@ -41,7 +42,7 @@ class StatusItemManager: NSObject, NSMenuItemValidation {
             print("Left click action is disabled")
         }
     }
-
+    
     @objc func showMenu() {
         print("Showing menu")
         let menu = NSMenu()
@@ -58,29 +59,29 @@ class StatusItemManager: NSObject, NSMenuItemValidation {
         addMenuItem(to: menu, title: "About", action: #selector(openAbout), target: self)
         menu.addItem(NSMenuItem.separator())
         addMenuItem(to: menu, title: "Quit", action: #selector(NSApplication.terminate(_:)), target: nil)
-
+        
         statusItem.menu = menu
         statusItem.button?.performClick(nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
             self?.statusItem.menu = nil
             self?.restoreLeftClickAction()
-
+            
         }
     }
-
+    
     private func addMenuItem(to menu: NSMenu, title: String, action: Selector, target: AnyObject?) {
         let menuItem = NSMenuItem(title: title, action: action, keyEquivalent: "")
         menuItem.target = target
         menu.addItem(menuItem)
     }
-
+    
     private func addCustomTemplateItems(to menu: NSMenu) {
         let templates = SettingsManager.shared.loadTemplates()
         for template in templates where !template.isDaily {
             addMenuItem(to: menu, title: "Create \(template.name) Note", action: #selector(NoteHandler.shared.openTemplateNote(_:)), target: NoteHandler.shared)
         }
     }
-
+    
     @objc func showDatePicker() {
         if popover == nil {
             popover = NSPopover()
@@ -91,12 +92,12 @@ class StatusItemManager: NSObject, NSMenuItemValidation {
             }))
             popover?.behavior = .transient
         }
-
+        
         if let button = statusItem.button {
             popover?.show(relativeTo: button.bounds, of: button, preferredEdge: .maxY)
         }
     }
-
+    
     func restoreLeftClickAction() {
         if let button = statusItem.button {
             print("Restoring left click action")
@@ -105,7 +106,7 @@ class StatusItemManager: NSObject, NSMenuItemValidation {
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
         }
     }
-
+    
     @objc func openAbout() {
         print("Opening About window")
         let aboutView = AboutPopoverView()
@@ -126,11 +127,11 @@ class StatusItemManager: NSObject, NSMenuItemValidation {
         let appearance = NSApp.effectiveAppearance
         return appearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
     }
-
+    
     func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
         print("Validating menu item: \(menuItem.title)")
-
+        
         return true
     }
-
+    
 }
