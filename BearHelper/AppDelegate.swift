@@ -4,7 +4,6 @@ import ServiceManagement
 import EventKit
 import BearClawCore
 
-
 class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     static let shared = AppDelegate()
     @Published var statusItem: NSStatusItem!
@@ -12,26 +11,46 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     @Published var popover: NSPopover?
     @Published var aboutPopover: NSPopover?
     private var aboutPopoverTransiencyMonitor: Any?
+    
     let bearIntegrationManager = BearIntegrationManager.shared
     let settingsManager = SettingsManager.shared
-    let calendarSyncManager = CalendarSyncManager.shared
+    let calendarManager: CalendarManager
+    
+    // Usamos lazy para inicializar solo cuando sea necesario
+    public lazy var calendarSyncManager: CalendarSyncManager = {
+        CalendarSyncManager(calendarManager: self.calendarManager)
+    }()
+    
     let noteManager = NoteManager.shared
     let noteHandler = NoteHandler()
-    let calendarManagerContainer = CalendarManagerContainer()
+    
+    override init() {
+        self.calendarManager = CalendarManager.shared
+        super.init()
+    }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if !bearIntegrationManager.isBearInstalled() {
             bearIntegrationManager.showErrorMessage()
             NSApplication.shared.terminate(self)
-            Task {
-                await requestCalendarAccess()
-            }
         } else {
             print("Bear is installed")
         }
         
+        Task {
+            await requestCalendarAccess()
+        }
+        
+        calendarManager.reloadCalendarConfiguration()
         StatusItemManager.shared.setupStatusItem()
         configureLaunchAtLogin()
+        NotificationCenter.default.addObserver(self, selector: #selector(calendarSelectionDidChange), name: .calendarSelectionChanged, object: nil)
+        
+        
+    }
+    
+    @objc func calendarSelectionDidChange() {
+        calendarManager.reloadCalendarConfiguration()
     }
     
     func configureLaunchAtLogin() {
@@ -77,7 +96,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         let settingsView = SettingsView()
             .environmentObject(self)
             .environmentObject(CalendarManager.shared)
-            .environmentObject(calendarSyncManager)
+            .environmentObject(calendarSyncManager) // Propagamos el objeto como EnvironmentObject
         let window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 500, height: 500),
             styleMask: [.titled, .closable, .resizable, .miniaturizable],

@@ -4,6 +4,7 @@ import AppKit
 import BearClawCore
 
 struct SettingsView: View {
+    // Variables de almacenamiento para configuraciones
     @AppStorage("homeNoteID") private var homeNoteID: String = ""
     @AppStorage("defaultAction") private var defaultAction: String = "home"
     @AppStorage("templates") private var templatesData: Data = Data()
@@ -11,22 +12,26 @@ struct SettingsView: View {
     @AppStorage("calendarSectionHeader") private var calendarSectionHeader: String = "## Calendar Events"
     @AppStorage("dailySectionHeader") private var dailySectionHeader: String = "## Daily"
     @AppStorage("selectedDateFormat") private var selectedDateFormat: String = "yyyy-MM-dd"
+    @AppStorage("customDateFormat") private var customDateFormat: String = ""
     
+    // Estado de la vista
     @State private var templates: [Template] = []
     @State private var showModal = false
     @State private var editingTemplate: Template?
     @State private var selectedTemplates = Set<UUID>()
     @State private var selectedTab = 0
-    @State private var customDateFormat: String = ""
     
+    // Variables de entorno para los manejadores
     @EnvironmentObject var appDelegate: AppDelegate
     @EnvironmentObject var calendarManager: CalendarManager
     @EnvironmentObject var calendarSyncManager: CalendarSyncManager
     
+    // Formatos de fecha disponibles
     let dateFormats = ["yyyy-MM-dd", "dd/MM/yyyy", "MM-dd-yyyy", "EEEE, MMM d, yyyy", "MMMM d, yyyy", "MMM d, yyyy", "custom date format"]
     
     var body: some View {
         VStack {
+            // Selector de pestañas
             Picker("", selection: $selectedTab) {
                 Text("General").tag(0)
                 Text("Templates").tag(1)
@@ -35,6 +40,7 @@ struct SettingsView: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding()
             
+            // Vista según la pestaña seleccionada
             if selectedTab == 0 {
                 generalSettings
             } else if selectedTab == 1 {
@@ -44,10 +50,12 @@ struct SettingsView: View {
             }
         }
         .onAppear {
+            // Cargar las plantillas y verificar la autorización del calendario al aparecer la vista
             loadTemplates()
             calendarManager.checkCalendarAuthorizationStatus()
         }
         .sheet(item: $editingTemplate) { template in
+            // Editor de plantillas modal
             TemplateEditorView(
                 template: Binding(
                     get: { template },
@@ -72,14 +80,16 @@ struct SettingsView: View {
                 }
             )
         }
-        .frame(minWidth: 400, minHeight: 600)
+        .frame(minWidth: 400, minHeight: 600) // Tamaño mínimo de la ventana
     }
     
+    // Vista de configuraciones generales
     private var generalSettings: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text("General")
                 .font(.title2)
                 .padding(.horizontal)
+            
             Group {
                 Text("Home Note ID:")
                     .padding(.horizontal)
@@ -149,7 +159,7 @@ struct SettingsView: View {
                     .padding(.horizontal)
                 }
                 
-                if selectedDateFormat == customDateFormat {
+                if selectedDateFormat == "custom date format" {
                     TextField("Enter custom date format", text: $customDateFormat, onCommit: {
                         selectedDateFormat = customDateFormat
                     })
@@ -171,8 +181,7 @@ struct SettingsView: View {
         }
     }
     
-    
-    
+    // Vista de configuración de plantillas
     private var templatesSettings: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text("Templates")
@@ -229,6 +238,7 @@ struct SettingsView: View {
         }
     }
     
+    // Vista de configuración de calendarios
     private var calendarSettings: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text("Calendars")
@@ -282,13 +292,14 @@ struct SettingsView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
+    // Abrir la configuración del sistema
     private func openSystemSettings() {
         if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Calendars") {
             NSWorkspace.shared.open(url)
             startCheckingAuthorization()
         }
     }
-    
+    // Comenzar a verificar el estado de autorización
     private func startCheckingAuthorization() {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             self.calendarManager.checkCalendarAuthorizationStatus()
@@ -299,13 +310,19 @@ struct SettingsView: View {
     }
     
     private func toggleCalendarSelection(for calendar: EKCalendar) {
-        if let index = calendarManager.selectedCalendarIDs.firstIndex(of: calendar.calendarIdentifier) {
-            calendarManager.selectedCalendarIDs.remove(at: index)
+        var newSelection = calendarManager.selectedCalendarIDs
+        if let index = newSelection.firstIndex(of: calendar.calendarIdentifier) {
+            newSelection.remove(at: index)
         } else {
-            calendarManager.selectedCalendarIDs.append(calendar.calendarIdentifier)
+            newSelection.append(calendar.calendarIdentifier)
+        }
+        
+        if Set(calendarManager.selectedCalendarIDs) != Set(newSelection) {
+            calendarManager.selectedCalendarIDs = newSelection
         }
     }
     
+    // Cargar plantillas desde el gestor de configuraciones
     private func loadTemplates() {
         templates = appDelegate.settingsManager.loadTemplates()
         if templates.isEmpty {
@@ -315,15 +332,18 @@ struct SettingsView: View {
         }
     }
     
+    // Guardar plantillas en el gestor de configuraciones
     private func saveTemplates() {
         appDelegate.settingsManager.saveTemplates(templates)
     }
     
+    // Eliminar plantilla en una posición específica
     private func deleteTemplate(at offsets: IndexSet) {
         templates.remove(atOffsets: offsets)
         saveTemplates()
     }
     
+    // Eliminar las plantillas seleccionadas
     private func deleteSelectedTemplates() {
         templates.removeAll { template in
             selectedTemplates.contains(template.id)
@@ -332,6 +352,7 @@ struct SettingsView: View {
         saveTemplates()
     }
     
+    // Formatear una fecha según el formato especificado
     private func formattedDate(for format: String) -> String {
         let dateFormatter = DateFormatter()
         if format == "custom date format" {
@@ -341,4 +362,5 @@ struct SettingsView: View {
         }
         return dateFormatter.string(from: Date())
     }
+    
 }

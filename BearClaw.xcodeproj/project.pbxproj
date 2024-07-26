@@ -583,7 +583,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 51;
 				DEVELOPMENT_ASSET_PATHS = "\"BearHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = 5LHT3P9C4T;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -619,7 +619,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 51;
 				DEVELOPMENT_ASSET_PATHS = "\"BearHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = 5LHT3P9C4T;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -653,7 +653,7 @@
 				CODE_SIGN_ENTITLEMENTS = BearHelperLauncher/BearHelperLauncher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 51;
 				DEVELOPMENT_ASSET_PATHS = "\"BearHelperLauncher/Preview Content\"";
 				DEVELOPMENT_TEAM = 5LHT3P9C4T;
 				ENABLE_PREVIEWS = YES;
@@ -686,7 +686,7 @@
 				CODE_SIGN_ENTITLEMENTS = BearHelperLauncher/BearHelperLauncher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 51;
 				DEVELOPMENT_ASSET_PATHS = "\"BearHelperLauncher/Preview Content\"";
 				DEVELOPMENT_TEAM = 5LHT3P9C4T;
 				ENABLE_PREVIEWS = YES;

@@ -14,7 +14,7 @@ struct BearHelperApp: App {
                 .environmentObject(appDelegate.noteManager)
                 .environmentObject(appDelegate.calendarSyncManager)
                 .environmentObject(appDelegate.noteHandler)
-                .environmentObject(CalendarManager.shared)
+                .environmentObject(appDelegate.calendarManager)
         }
     }
 }
