@@ -112,6 +112,7 @@ struct TemplateEditorView: View {
                     updatedTemplate.content = newContent
                     updatedTemplate.tag = newTag
                     updatedTemplate.isDaily = newIsDaily
+                    updatedTemplate.isHome = newIsHome
                     onSave(updatedTemplate)
                     presentationMode.wrappedValue.dismiss()
                 }
