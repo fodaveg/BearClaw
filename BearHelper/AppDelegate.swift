@@ -21,11 +21,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         CalendarSyncManager(calendarManager: self.calendarManager)
     }()
     
-    let noteManager = NoteManager.shared
+    let noteManager = NoteManager()
     let noteHandler = NoteHandler()
     
     override init() {
-        self.calendarManager = CalendarManager.shared
+        self.calendarManager = CalendarManager()
         super.init()
     }
     
@@ -82,7 +82,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         }
     }
     
-    @objc func openSettings() {
+    @MainActor @objc func openSettings() {
         print("Opening settings")
         if settingsWindowController == nil {
             createSettingsWindow()
@@ -91,7 +91,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         NSApp.activate(ignoringOtherApps: true)
     }
     
-    private func createSettingsWindow() {
+    @MainActor private func createSettingsWindow() {
         print("Creating settings window")
         let settingsView = SettingsView()
             .environmentObject(self)
