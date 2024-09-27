@@ -9,7 +9,7 @@ struct BearHelperLauncherApp: App {
 
     var body: some Scene {
         // No crear ninguna ventana
-        Settings {
+        WindowGroup {
             EmptyView()
         }
     }

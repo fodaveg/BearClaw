@@ -196,6 +196,11 @@ struct SettingsView: View {
                             Spacer()
                         }
                         .contentShape(Rectangle())
+                        .onTapGesture(count: 2) {
+                            // Ejecutar la acción de edición en doble clic
+                            editingTemplate = template
+                            showModal = true
+                        }
                         .onTapGesture {
                             selectedTemplates = [template.id]
                         }

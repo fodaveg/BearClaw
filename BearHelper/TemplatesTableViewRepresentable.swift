@@ -30,10 +30,12 @@ struct TemplatesTableViewRepresentable: NSViewControllerRepresentable {
             self.parent = parent
         }
         
+        @MainActor
         var onEdit: (Template) -> Void {
             return parent.onEdit
         }
         
+        @MainActor
         var onDelete: (Template) -> Void {
             return parent.onDelete
         }

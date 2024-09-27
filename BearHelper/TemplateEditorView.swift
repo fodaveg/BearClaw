@@ -9,6 +9,7 @@ struct TemplateEditorView: View {
     @State private var newContent: String
     @State private var newTag: String
     @State private var newIsDaily: Bool
+    @State private var newIsHome: Bool
     @FocusState private var focusedField: Field?
     var onSave: (Template) -> Void
     
@@ -25,6 +26,7 @@ struct TemplateEditorView: View {
         self._newContent = State(initialValue: template.wrappedValue.content)
         self._newTag = State(initialValue: template.wrappedValue.tag)
         self._newIsDaily = State(initialValue: template.wrappedValue.isDaily)
+        self._newIsHome = State(initialValue: template.wrappedValue.isHome)
     }
     
     var body: some View {
@@ -38,13 +40,26 @@ struct TemplateEditorView: View {
                         }
                 }
                 Section(header: Text("Content")) {
-                    VStack(spacing: 0) {
+                    VStack(spacing: 0.2) {
                         HStack {
                             Button("Date") {
                                 insertSnippet("%date()%")
                             }
                             Spacer()
-                            Button("Daily") {
+                            Button("Yesterday") {
+                                insertSnippet("[%date(-1)%](fodabear://open-daily-note-for-date?date=%date(-1)%)")
+                            }
+                            Spacer()
+                            Button("Tomorrow") {
+                                insertSnippet("[%date(+1)%](fodabear://open-daily-note-for-date?date=%date(+1)%)")
+                            }
+                            Spacer()
+                        }
+                        .padding(.horizontal)
+                        .background(Color.gray.opacity(0.2))
+                        
+                        HStack {
+                            Button("Daily Section") {
                                 insertSnippet("\(SettingsManager.shared.dailySectionHeader)")
                             }
                             Spacer()
@@ -56,21 +71,14 @@ struct TemplateEditorView: View {
                                 insertSnippet("%syncnow()%")
                             }
                             Spacer()
-                            Button("Yesterday") {
-                                insertSnippet("[%date(-1)%](fodabear://open-daily-note-for-date?date=%date(-1)%)")
-                            }
-                            Spacer()
-                            Button("Tomorrow") {
-                                insertSnippet("[%date(+1)%](fodabear://open-daily-note-for-date?date=%date(+1)%)")
-                            }
-                            Spacer()
-                            Button("Tag") {
+                            Button("Tag Placement") {
                                 insertSnippet("%tag_placeholder%")
                             }
                             Spacer()
                         }
                         .padding(.horizontal)
                         .background(Color.gray.opacity(0.2))
+            
                         
                         TextEditorWithTabSupport(text: $newContent, focusedField: $focusedField)
                             .focused($focusedField, equals: .content)
@@ -87,6 +95,9 @@ struct TemplateEditorView: View {
                 Section(header: Text("Daily")) {
                     Toggle("Is Daily", isOn: $newIsDaily)
                 }
+                Section(header: Text("Home")) {
+                    Toggle("Is Home", isOn: $newIsHome)
+                }
             }
             .padding()
             
@@ -101,6 +112,7 @@ struct TemplateEditorView: View {
                     updatedTemplate.content = newContent
                     updatedTemplate.tag = newTag
                     updatedTemplate.isDaily = newIsDaily
+                    updatedTemplate.isHome = newIsHome
                     onSave(updatedTemplate)
                     presentationMode.wrappedValue.dismiss()
                 }
