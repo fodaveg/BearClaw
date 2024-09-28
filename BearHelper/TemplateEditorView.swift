@@ -1,6 +1,6 @@
-import SwiftUI
-import Carbon.HIToolbox.Events
 import BearClawCore
+import Carbon.HIToolbox.Events
+import SwiftUI
 
 struct TemplateEditorView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -12,13 +12,13 @@ struct TemplateEditorView: View {
     @State private var newIsHome: Bool
     @FocusState private var focusedField: Field?
     var onSave: (Template) -> Void
-    
+
     enum Field: Hashable {
         case name
         case content
         case tag
     }
-    
+
     init(template: Binding<Template>, onSave: @escaping (Template) -> Void) {
         self._template = template
         self.onSave = onSave
@@ -28,7 +28,7 @@ struct TemplateEditorView: View {
         self._newIsDaily = State(initialValue: template.wrappedValue.isDaily)
         self._newIsHome = State(initialValue: template.wrappedValue.isHome)
     }
-    
+
     var body: some View {
         VStack {
             Form {
@@ -47,24 +47,28 @@ struct TemplateEditorView: View {
                             }
                             Spacer()
                             Button("Yesterday") {
-                                insertSnippet("[%date(-1)%](fodabear://open-daily-note-for-date?date=%date(-1)%)")
+                                insertSnippet(
+                                    "[%date(-1)%](fodabear://open-daily-note-for-date?date=%date(-1)%)"
+                                )
                             }
                             Spacer()
                             Button("Tomorrow") {
-                                insertSnippet("[%date(+1)%](fodabear://open-daily-note-for-date?date=%date(+1)%)")
+                                insertSnippet(
+                                    "[%date(+1)%](fodabear://open-daily-note-for-date?date=%date(+1)%)"
+                                )
                             }
                             Spacer()
                         }
                         .padding(.horizontal)
                         .background(Color.gray.opacity(0.2))
-                        
+
                         HStack {
                             Button("Daily Section") {
-                                insertSnippet("\(SettingsManager.shared.dailySectionHeader)")
+                                insertSnippet("%daily_placeholder%")
                             }
                             Spacer()
                             Button("Calendar") {
-                                insertSnippet("\(SettingsManager.shared.calendarSectionHeader)")
+                                insertSnippet("%calendar_placeholder%")
                             }
                             Spacer()
                             Button("Sync Now") {
@@ -78,11 +82,12 @@ struct TemplateEditorView: View {
                         }
                         .padding(.horizontal)
                         .background(Color.gray.opacity(0.2))
-            
-                        
-                        TextEditorWithTabSupport(text: $newContent, focusedField: $focusedField)
-                            .focused($focusedField, equals: .content)
-                            .frame(minHeight: 200)
+
+                        TextEditorWithTabSupport(
+                            text: $newContent, focusedField: $focusedField
+                        )
+                        .focused($focusedField, equals: .content)
+                        .frame(minHeight: 200)
                     }
                 }
                 Section(header: Text("Tag")) {
@@ -100,7 +105,7 @@ struct TemplateEditorView: View {
                 }
             }
             .padding()
-            
+
             HStack {
                 Button("Cancel") {
                     presentationMode.wrappedValue.dismiss()
@@ -120,17 +125,20 @@ struct TemplateEditorView: View {
             .padding()
         }
         .frame(minWidth: 400, minHeight: 300)
-        .background(WindowAccessor { window in
-            window?.styleMask.insert([.resizable])
-        })
+        .background(
+            WindowAccessor { window in
+                window?.styleMask.insert([.resizable])
+            }
+        )
         .onAppear {
             focusedField = .name
         }
     }
-    
+
     func insertSnippet(_ snippet: String) {
         if let selectedRange = NSApp.keyWindow?.firstResponder as? NSTextView {
-            selectedRange.insertText(snippet, replacementRange: selectedRange.selectedRange())
+            selectedRange.insertText(
+                snippet, replacementRange: selectedRange.selectedRange())
         }
     }
 }
@@ -138,17 +146,18 @@ struct TemplateEditorView: View {
 struct TextEditorWithTabSupport: NSViewRepresentable {
     @Binding var text: String
     @FocusState.Binding var focusedField: TemplateEditorView.Field?
-    
+
     func makeNSView(context: Context) -> NSScrollView {
         let scrollView = NSTextViewWrapper()
         scrollView.textView.delegate = context.coordinator
         scrollView.textView.string = text
         scrollView.textView.isEditable = true
         scrollView.textView.isRichText = false
-        scrollView.textView.font = NSFont.systemFont(ofSize: NSFont.systemFontSize)
+        scrollView.textView.font = NSFont.systemFont(
+            ofSize: NSFont.systemFontSize)
         return scrollView
     }
-    
+
     func updateNSView(_ nsView: NSScrollView, context: Context) {
         if let scrollView = nsView as? NSTextViewWrapper {
             if scrollView.textView.string != text {
@@ -156,25 +165,27 @@ struct TextEditorWithTabSupport: NSViewRepresentable {
             }
         }
     }
-    
+
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-    
+
     class Coordinator: NSObject, NSTextViewDelegate {
         var parent: TextEditorWithTabSupport
-        
+
         init(_ parent: TextEditorWithTabSupport) {
             self.parent = parent
         }
-        
+
         func textDidChange(_ notification: Notification) {
             if let textView = notification.object as? NSTextView {
                 parent.text = textView.string
             }
         }
-        
-        func textView(_ textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+
+        func textView(
+            _ textView: NSTextView, doCommandBy commandSelector: Selector
+        ) -> Bool {
             if commandSelector == #selector(NSResponder.insertTab(_:)) {
                 parent.focusedField = .tag
                 return true
@@ -186,25 +197,27 @@ struct TextEditorWithTabSupport: NSViewRepresentable {
 
 class NSTextViewWrapper: NSScrollView {
     let textView = NSTextView()
-    
+
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         self.documentView = textView
         self.hasVerticalScroller = true
         self.autohidesScrollers = true
         self.borderType = .bezelBorder
-        
+
         textView.minSize = NSSize(width: 0.0, height: 0.0)
-        textView.maxSize = NSSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
+        textView.maxSize = NSSize(
+            width: CGFloat.greatestFiniteMagnitude,
+            height: CGFloat.greatestFiniteMagnitude)
         textView.isVerticallyResizable = true
         textView.isHorizontallyResizable = false
         textView.autoresizingMask = [.width]
-        
+
         textView.isAutomaticDashSubstitutionEnabled = false
         textView.isAutomaticQuoteSubstitutionEnabled = false
         textView.isAutomaticSpellingCorrectionEnabled = false
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -212,11 +225,12 @@ class NSTextViewWrapper: NSScrollView {
 
 struct WindowAccessor: View {
     var callback: (NSWindow?) -> Void
-    
+
     var body: some View {
         GeometryReader { _ in
             Color.clear
-                .preference(key: WindowPreferenceKey.self, value: NSApp.keyWindow)
+                .preference(
+                    key: WindowPreferenceKey.self, value: NSApp.keyWindow)
         }
         .onPreferenceChange(WindowPreferenceKey.self, perform: callback)
     }
@@ -224,9 +238,9 @@ struct WindowAccessor: View {
 
 struct WindowPreferenceKey: PreferenceKey {
     typealias Value = NSWindow?
-    
+
     static var defaultValue: NSWindow?
-    
+
     static func reduce(value: inout NSWindow?, nextValue: () -> NSWindow?) {
         value = value ?? nextValue()
     }
