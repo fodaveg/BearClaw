@@ -29,10 +29,27 @@ struct AboutPopoverView: View {
             .padding()
             Divider()
             HStack {
-                Image(systemName: "envelope.fill")
-                    .foregroundColor(.blue)
+                if let emailIcon = NSImage(named: "email") {
+                    Image(nsImage: emailIcon)
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                } else {
+                    Text("Email Icon not found")
+                }
                 Text("Email:")
                 Link("fodaveg@fodaveg.net", destination: URL(string: "mailto:fodaveg@fodaveg.net")!)
+            }
+            .padding(.vertical, 5)
+            HStack {
+                if let blueskyIcon = NSImage(named: "bluesky") {
+                    Image(nsImage: blueskyIcon)
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                } else {
+                    Text("Bluesky Icon not found")
+                }
+                Text("Bluesky:")
+                Link("@fodaveg.net", destination: URL(string: "https://bsky.app/profile/fodaveg.net")!)
             }
             .padding(.vertical, 5)
             HStack {
@@ -50,6 +67,6 @@ struct AboutPopoverView: View {
             Spacer()
         }
         .padding()
-        .frame(width: 300, height: 200)
+        .frame(width: 300, height: 230)
     }
 }
